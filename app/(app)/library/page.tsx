@@ -1,4 +1,3 @@
-"use client";
 import { getAllDeckInfo } from "@/app/lib/decks";
 import { CardDeck } from "../types";
 import { DeckList } from "./components/DeckList";

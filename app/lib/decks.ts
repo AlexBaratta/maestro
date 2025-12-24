@@ -1,3 +1,5 @@
+import { describe } from "node:test";
+
 export const getAllDeckInfo = async () => {
   // TODO
   return [
@@ -32,4 +34,28 @@ export const getAllDeckInfo = async () => {
       wordCount: 32,
     },
   ];
+};
+
+export const getDeck = async () => {
+  return {
+    id: "1",
+    name: "Deck 1",
+    description: "We study and shiii",
+    wordCount: 23,
+    terms: [
+      {
+        word: "hello",
+        definition: "word",
+      },
+      {
+        word: "whats",
+        definition: "up",
+      },
+
+      {
+        word: "rtyrty",
+        definition: "wotryrtyrd",
+      },
+    ],
+  };
 };

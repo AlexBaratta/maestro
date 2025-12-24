@@ -1,3 +1,4 @@
+"use client";
 import { styled } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { CardDeck } from "../../types";
@@ -12,18 +13,21 @@ const LibraryList = styled(`div`)({
   flexDirection: "column",
   gap: "18px",
 });
+
 export const DeckList = ({ deckList }: DeckListProps) => {
   const router = useRouter();
   return (
-    <LibraryList>
-      {deckList.map(({ id, name, description, wordCount }) => (
-        <CardDeckListItem
-          name={name}
-          description={description}
-          wordCount={wordCount}
-          onClick={() => router.push(`/library/${id}`)}
-        />
-      ))}
-    </LibraryList>
+    <div style={{}}>
+      <LibraryList>
+        {deckList.map(({ id, name, description, wordCount }) => (
+          <CardDeckListItem
+            name={name}
+            description={description}
+            wordCount={wordCount}
+            onClick={() => router.push(`/library/${id}`)}
+          />
+        ))}
+      </LibraryList>
+    </div>
   );
 };
