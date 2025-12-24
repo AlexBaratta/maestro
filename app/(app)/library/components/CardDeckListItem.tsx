@@ -1,19 +1,33 @@
+"use client";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 
 type CardDeckListItemProps = {
   name: string;
   description: string;
   wordCount: number;
+  onClick: () => void;
 };
 
 export const CardDeckListItem = ({
-  name = "Vocab words",
-  description = "we do a little thing or 2 with studying here",
-  wordCount = 123,
+  name,
+  description,
+  wordCount,
+  onClick,
 }: CardDeckListItemProps) => {
   return (
     <Box>
-      <Card sx={{ maxWidth: "700px" }}>
+      <Card
+        onClick={onClick}
+        sx={{
+          maxWidth: "700px",
+          display: "flex",
+          justifyContent: "space-between",
+          "&:hover": {
+            boxShadow: "6",
+            cursor: "pointer",
+          },
+        }}
+      >
         <CardContent>
           <Typography variant="h5">
             {name} | {wordCount} terms
