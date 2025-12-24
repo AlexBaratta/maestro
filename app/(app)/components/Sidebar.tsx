@@ -5,7 +5,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Button, Drawer, List, ListItem, styled } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { SidebarItem } from "../types/sidebar";
+import { SidebarItem } from "./types/sidebar";
 
 type SidebarProps = {
   current?: SidebarItem;
