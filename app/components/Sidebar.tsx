@@ -1,21 +1,33 @@
 "use client";
-import {
-  Button,
-  Drawer,
-  IconButton,
-  List,
-  ListItem,
-  styled,
-} from "@mui/material";
-import { ReactNode, useState } from "react";
+import { Class, LibraryBooks } from "@mui/icons-material";
+import HomeIcon from "@mui/icons-material/Home";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Button, Drawer, List, ListItem, styled } from "@mui/material";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { SidebarItem } from "../types/sidebar";
 
 type SidebarProps = {
-  items: SidebarItem[];
   current?: SidebarItem;
 };
+
+const sidebarItems: SidebarItem[] = [
+  {
+    name: "Home",
+    icon: <HomeIcon />,
+    url: "/home",
+  },
+  {
+    name: "Library",
+    icon: <LibraryBooks />,
+    url: "/library",
+  },
+  {
+    name: "Flashcards",
+    icon: <Class />,
+    url: "/flashcards",
+  },
+];
 
 const ColumnList = styled(List)({
   display: "flex",
@@ -27,7 +39,7 @@ const ColumnList = styled(List)({
 const OPEN_DRAWER_WIDTH = 200;
 const COLLAPSED_DRAWER_WIDTH = 64;
 
-export const Sidebar = ({ items }: SidebarProps) => {
+export const Sidebar = ({ current }: SidebarProps) => {
   const router = useRouter();
   const [collapsed, setCollapsed] = useState<boolean>(false);
   return (
@@ -60,7 +72,7 @@ export const Sidebar = ({ items }: SidebarProps) => {
       </Button>
 
       <ColumnList>
-        {items.map(({ name, icon, url }) => (
+        {sidebarItems.map(({ name, icon, url }) => (
           <ListItem disablePadding>
             <Button
               onClick={() => router.push(url)}
