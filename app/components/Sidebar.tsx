@@ -9,14 +9,12 @@ import {
 } from "@mui/material";
 import { ReactNode, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-export type SidebarItem = {
-  name: string;
-  icon: ReactNode;
-  url: string;
-};
+import { useRouter } from "next/navigation";
+import { SidebarItem } from "../types/sidebar";
 
 type SidebarProps = {
   items: SidebarItem[];
+  current?: SidebarItem;
 };
 
 const ColumnList = styled(List)({
@@ -30,6 +28,7 @@ const OPEN_DRAWER_WIDTH = 200;
 const COLLAPSED_DRAWER_WIDTH = 64;
 
 export const Sidebar = ({ items }: SidebarProps) => {
+  const router = useRouter();
   const [collapsed, setCollapsed] = useState<boolean>(false);
   return (
     <Drawer
@@ -61,9 +60,10 @@ export const Sidebar = ({ items }: SidebarProps) => {
       </Button>
 
       <ColumnList>
-        {items.map(({ name, icon }) => (
+        {items.map(({ name, icon, url }) => (
           <ListItem disablePadding>
             <Button
+              onClick={() => router.push(url)}
               sx={{
                 display: "flex",
                 gap: "10px",
