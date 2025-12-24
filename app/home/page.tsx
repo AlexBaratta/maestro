@@ -7,14 +7,17 @@ const sidebarItems: SidebarItem[] = [
   {
     name: "Home",
     icon: <HomeIcon />,
+    url: "/",
   },
   {
     name: "Library",
     icon: <LibraryBooks />,
+    url: "/library",
   },
   {
     name: "Flashcards",
     icon: <Class />,
+    url: "/flashcards",
   },
 ];
 

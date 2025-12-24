@@ -12,6 +12,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 export type SidebarItem = {
   name: string;
   icon: ReactNode;
+  url: string;
 };
 
 type SidebarProps = {
