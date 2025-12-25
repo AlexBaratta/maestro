@@ -1,16 +1,17 @@
 import { Term } from "@/app/(app)/types";
+import { TermCard } from "./TermCard";
+import { FlexList } from "../../styles";
+
 type WordListProps = {
   terms: Term[];
 };
+
 export const WordList = ({ terms }: WordListProps) => {
   return (
-    <div>
-      {terms.map(({ word, definition }) => (
-        <div>
-          <a>{word}</a>
-          <a>{definition}</a>
-        </div>
+    <FlexList>
+      {terms.map((term) => (
+        <TermCard term={term} />
       ))}
-    </div>
+    </FlexList>
   );
 };
