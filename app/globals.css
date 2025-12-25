@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "react-quizlet-flashcard/dist/index.css";
 
 :root {
   --background: #ffffff;

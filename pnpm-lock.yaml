@@ -29,6 +29,9 @@ importers:
       react-dom:
         specifier: 19.2.1
         version: 19.2.1(react@19.2.1)
+      react-quizlet-flashcard:
+        specifier: ^4.0.22
+        version: 4.0.22(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
     devDependencies:
       '@tailwindcss/postcss':
         specifier: ^4
@@ -1844,6 +1847,12 @@ packages:
 
   react-is@19.2.3:
     resolution: {integrity: sha512-qJNJfu81ByyabuG7hPFEbXqNcWSU3+eVus+KJs+0ncpGfMyYdvSmxiJxbWR65lYi1I+/0HBcliO029gc4F+PnA==}
+
+  react-quizlet-flashcard@4.0.22:
+    resolution: {integrity: sha512-YbkAY4BWi8anBNinqjuLIK6cLddlFw6iRgzcoJEXgXBR3Of/cO0uxfPN9Pr3+fO0fUTk8d1hc/tXQAupL+LhcQ==}
+    peerDependencies:
+      react: ^19.1.0
+      react-dom: ^19.1.0
 
   react-transition-group@4.4.5:
     resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
@@ -4067,6 +4076,11 @@ snapshots:
   react-is@16.13.1: {}
 
   react-is@19.2.3: {}
+
+  react-quizlet-flashcard@4.0.22(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
+    dependencies:
+      react: 19.2.1
+      react-dom: 19.2.1(react@19.2.1)
 
   react-transition-group@4.4.5(react-dom@19.2.1(react@19.2.1))(react@19.2.1):
     dependencies:

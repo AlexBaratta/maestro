@@ -2,6 +2,7 @@
 import { CardDeck } from "@/app/(app)/types";
 import { WordList } from "./WordList";
 import { styled, Typography } from "@mui/material";
+import { Flashcard } from "./Flashcard";
 
 type DeckViewProps = {
   deck: CardDeck;
@@ -18,6 +19,7 @@ export const DeckView = ({ deck }: DeckViewProps) => {
       <Typography variant="h3" color="primary">
         {deck.name}
       </Typography>
+      {deck.terms && <Flashcard terms={deck.terms} />}
       <WordList terms={deck.terms!} />
     </Container>
   );
